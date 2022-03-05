@@ -17,6 +17,6 @@ Metadata:
  - Finish: ?
  - Base: No
  - Window size: 1000 x 1000
- - Pixel size: 10 x 10
+ - Pixel size: 5x5
 
 Select checkpoint -> Car Minigame -> Checkpoint game -> select next checkpoint -> ...
