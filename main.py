@@ -1,11 +1,12 @@
 import pygame
 
-width = 1000
-height = 1000
+from game import Game
 
 def main():
-    screen = pygame.display.set_mode((width, height))
-    pygame.display.flip()
+    g = Game()
+    while g.running:
+        g.curr_menu.display_menu()
+        g.game_loop()
 
 if __name__ == '__main__':
     main()
