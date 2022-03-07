@@ -25,7 +25,7 @@ class Map():
         pygame.display.update()  # flush
     
     def getPointData(self, filePath):
-        file = open(filePath, "r") #loads and reads the json file
+        file = open(filePath, "r", encoding="utf8") #loads and reads the json file
         content = file.read()
         data = json.loads(content)
         nOfPixelsX = self.width/self.pixelWidth
