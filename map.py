@@ -14,14 +14,15 @@ class Map():
         self.pixelWidth, self.pixelHeight = 5, 5 # where do i get this from???
         self.run_display = True
         self.cursor_rect = pygame.Rect(0, 0, 45, 45) # x, y, width, height
-        self.background = pygame.image.load("images\map\base-map.png")
+        baseSurface = pygame.image.load("images/map/base-map.png")
         self.latitudeMin = 55.5
         self.latitudeMax = 57.9
         self.longitudeMin = 20.0
         self.longitudeMax = 25.0
 
     def blit_screen(self):
-        self.game.window.blit(self.background, (0, 0))
+        self.game.window.blit(self.baseSurface, (0,0))
+        self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
     
     def getPointData(self, filePath):
@@ -46,7 +47,7 @@ class Map():
         return coordinatesX, coordinatesY, roads
 
     #run once in the beginning
-    def get_points(self, pathToDataSource): #path ="data-sources/points.json"
+    def get_points(self, pathToDataSource): # path= "data-sources/points.json" or "data-sources/cities.json"
         self.pointCoordinatesX, self.pointCoordinatesY, self.roads = self.getPointData(pathToDataSource)
         #self.cityCoordinatesX, ... # do the same thing when cities.json file added
         self.pointStates=[0]*len(self.pointCoordinatesX)
