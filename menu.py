@@ -2,6 +2,11 @@ import pygame
 
 class Menu():
     def __init__(self, game):
+        """
+        Initializes Menu object.
+        
+        :param game: (Game [game.py]) Main Game object.
+        """
         self.game = game
         self.mid_w, self.mid_h = self.game.DISPLAY_W/2 ,  self.game.DISPLAY_H/2
         self.run_display = True
@@ -9,15 +14,27 @@ class Menu():
         self.offset = -100
 
     def draw_cursor(self):
+        """
+        Draws cursor (* symbol).
+        """
         self.game.draw_text('*', 45, self.cursor_rect.x - 20, self.cursor_rect.y)
 
     def blit_screen(self):
+        """
+        Resets screen + keys.
+        """
         self.game.window.blit(self.game.display, (0, 0))
         pygame.display.update()  # flush
         self.game.reset_keys()
 
 class MainMenu(Menu):
     def __init__(self, game):
+        """
+        Initialize MainMenu object.
+        Subclass from Menu class.
+
+        :param game: (Game [game.py]) Main Game object.
+        """
         Menu.__init__(self, game)
         self.state = 'Start' # which menu part is selected
         self.startx, self.starty = self.mid_w, self.mid_h + 35
@@ -28,6 +45,10 @@ class MainMenu(Menu):
         self.background = pygame.image.load('images/fons.jpg')
 
     def display_menu(self):
+        """
+        Displays menu.
+        Main menu loop.
+        """
         self.run_display = True
         while self.run_display:
             self.game.check_events()
@@ -44,6 +65,9 @@ class MainMenu(Menu):
             self.blit_screen()
 
     def move_cursor(self):
+        """
+        Listens for the keyboard event (keys pressed) and moves cursor (*) accordingly.
+        """
         if self.game.DOWN_KEY:
             if self.state == 'Start':
                 self.cursor_rect.midtop = (self.optionx + self.offset, self.optiony)
@@ -66,6 +90,9 @@ class MainMenu(Menu):
                 self.state = 'Options'
 
     def check_input(self):
+        """
+        Listens for keyboard events and changes Menu.state state.
+        """
         self.move_cursor()
         if self.game.START_KEY:
             if self.state == 'Start':
@@ -78,6 +105,12 @@ class MainMenu(Menu):
 
 class OptionsMenu(Menu):
     def __init__(self, game):
+        """
+        Initialize OptionsMenu object.
+        Subclass from Menu class.
+
+        :param game: (Game [game.py]) Main Game object.
+        """
         Menu.__init__(self, game)
         self.state = 'Volume'
         self.volx, self.voly = self.mid_w, self.mid_h + 35
@@ -85,6 +118,10 @@ class OptionsMenu(Menu):
         self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
 
     def display_menu(self):
+        """
+        Displays menu.
+        Main menu loop.
+        """
         self.run_display = True
         while self.run_display:
             self.game.check_events()
@@ -97,6 +134,9 @@ class OptionsMenu(Menu):
             self.blit_screen()
 
     def check_input(self):
+        """
+        Listens for keyboard events and changes Menu.state state.
+        """
         if self.game.BACK_KEY:
             self.game.curr_menu = self.game.main_menu
             self.run_display = False
@@ -113,9 +153,19 @@ class OptionsMenu(Menu):
 
 def CreditsMenu(Menu):
     def __init__(self, game):
+        """
+        Initialize CreditsMenu object.
+        Subclass from Menu class.
+
+        :param game: (Game [game.py]) Main Game object.
+        """
         Menu.__init__(self.game)
 
     def display_menu(self):
+        """
+        Displays menu.
+        Main menu loop.
+        """
         self.run_display = True
         while self.run_display:
             self.game.check_events()

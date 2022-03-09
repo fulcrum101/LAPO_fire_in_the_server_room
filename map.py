@@ -9,6 +9,11 @@ import json
 
 class Map():
     def __init__(self, game):
+        """
+        Initialize Map object.
+
+        :param game: (Game [game.py]) Main Game object.
+        """
         self.game = game
         self.width, self.height = self.game.DISPLAY_W, self.game.DISPLAY_H
         self.pixelWidth, self.pixelHeight = 5, 5 # where do i get this from???
@@ -21,11 +26,23 @@ class Map():
         self.longitudeMax = 25.0
 
     def blit_screen(self):
+        """
+        Resets screen.
+        """
         self.game.window.blit(self.baseSurface, (0,0))
         self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
     
     def getPointData(self, filePath):
+        """
+        Reads point data from file.
+
+        :param filePath: (str) Path of file to read.
+        :return: coordinatesX, coordinatesY, roads
+        - coordinatesX: (int) X coordinate of the point.
+        - coordinatesY: (int) Y coordinate of the points.
+        - roads: ([]) list of points connected.
+        """
         file = open(filePath, "r", encoding="utf8") #loads and reads the json file
         content = file.read()
         data = json.loads(content)
@@ -46,19 +63,38 @@ class Map():
             #can read name of point and id as well
         return coordinatesX, coordinatesY, roads
 
-    #run once in the beginning
     def get_points(self, pathToDataSource): # path= "data-sources/points.json" or "data-sources/cities.json"
+        """
+        Loads in all points data.
+        !!! Run once in the beginning
+
+        :param pathToDataSource: (str) Path to file (.json) with all points. 
+        """
         self.pointCoordinatesX, self.pointCoordinatesY, self.roads = self.getPointData(pathToDataSource)
         #self.cityCoordinatesX, ... # do the same thing when cities.json file added
         self.pointStates=[0]*len(self.pointCoordinatesX)
 
-    #draws a square - will be used to mark points and cities on the map
     def draw_a_square(self, nInGamePixels, x, y, colour):
+        """
+        Draws a square.
+        Used to mark points and cities on the map.
+
+        :param nInGamePixels: (int) Number of pixels of the window/screen.?
+        :param x: (int) X coordinate of the rect.
+        :param y: (int) Y coordinate of the rect.
+        :param colour: (turple (z, z, z)) Color of the rect.
+        """
         pygame.draw.rect(self.game.window, colour, (x*self.pixelWidth, y*self.pixelHeight, self.pixelWidth*nInGamePixels, self.pixelHeight*nInGamePixels))
         self.blit_screen() 
 
-    #marks points and cities on the map
     def draw_points(self, nInGamePixels, colourIfNotVisited, colourIfVisited):
+        """
+        Marks points and cities on the map.
+
+        :param nInGamePixels: (int) Number of pixels of the window/screen.?
+        :param colourIfNotVisited: (turple (z, z, z)) Color of the point if it was not previously visited.
+        :param colourIfVisited: (turple (z, z, z)) Color of the point if it was not previously visited.
+        """
         id = 0
         for state in self.pointStates:
             if state == 0: #not visited
@@ -68,12 +104,28 @@ class Map():
             id+=1
 
     def draw_a_road(self, x1, y1, x2, y2, linewidth, colour):
+        """
+        Draws road (line).
+
+        :param x1: (int) X coordinate of start.
+        :param y1: (int) Y coordinate of start.
+        :param x2: (int) X coordinate of end.
+        :param y2: (int) Y coordinate of end.
+        :param linewidth: (int) Width of the line.
+        :param colour: (turple (z, z, z)) Color of the line.
+        """
         startGeometry = ((int)((x1+2.5)*self.pixelWidth), (int)((y1+2.5)*self.pixelHeight))
         endGeometry = ((int)((x2+2.5)*self.pixelWidth), (int)((y2+2.5)*self.pixelHeight))
         pygame.draw.line(self.window, colour, startGeometry, endGeometry, linewidth)
         self.blit_screen()
 
     def draw_roads(self, lineWidth, colour):
+        """
+        Iterates trough all roads from Map.roads and draws them with Map.draw_a_road().
+
+        :param linewidth: (int) Width of the line.
+        :param colour: (turple (z, z, z)) Color of the line.
+        """
         id = 0
         for state in self.pointStates:
             x1 = self.pointCoordinatesX[id]
