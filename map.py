@@ -1,12 +1,6 @@
 import pygame
 import json 
 
-#some of the needed functions for map
-#map = Map(self)
-#map.blit_screen()
-#map.get_points()
-#map.draw_points(4, (0,0,0), (225,0,0))
-
 class Map():
     def __init__(self, game):
         """
@@ -17,31 +11,45 @@ class Map():
         self.game = game
         self.width, self.height = self.game.DISPLAY_W, self.game.DISPLAY_H
         self.pixelWidth, self.pixelHeight = 5, 5 # where do i get this from???
-        self.run_display = True
+        self.running = self.game.map_running
         self.cursor_rect = pygame.Rect(0, 0, 45, 45) # x, y, width, height
         baseSurface = pygame.image.load("images/map/base-map.png")
         self.latitudeMin = 55.5
         self.latitudeMax = 57.9
         self.longitudeMin = 20.0
         self.longitudeMax = 25.0
+        self.baseSurface = pygame.image.load("images/map/base-map.png")
+        self.get_points("data-sources/cities.json")
 
     def blit_screen(self):
         """
         Resets screen.
         """
-        self.game.window.blit(self.baseSurface, (0,0))
+        self.game.display.blit(self.baseSurface, (0,0))
+        self.draw_points(4, self.game.MAGENTA, self.game.MAGENTA)
         self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
     
+    def run_map(self):
+        """
+        Displays map.
+        """
+        #self.draw_points(4, self.game.MAGENTA, self.game.MAGENTA)
+        self.blit_screen()
+        if(self.game.BACK_KEY==True):
+            self.running = False
+            self.game.curr_menu = self.game.credits
+        
+
     def getPointData(self, filePath):
         """
         Reads point data from file.
 
         :param filePath: (str) Path of file to read.
         :return: coordinatesX, coordinatesY, roads
-        - coordinatesX: (int) X coordinate of the point.
-        - coordinatesY: (int) Y coordinate of the points.
-        - roads: ([]) list of points connected.
+        - coordinatesX: ([]*int) X coordinates of the points.
+        - coordinatesY: ([]*int) Y coordinates of the points.
+        - roads: ([]*[]*int) list of neighbour points of the points.
         """
         file = open(filePath, "r", encoding="utf8") #loads and reads the json file
         content = file.read()
@@ -84,8 +92,8 @@ class Map():
         :param y: (int) Y coordinate of the rect.
         :param colour: (turple (z, z, z)) Color of the rect.
         """
-        pygame.draw.rect(self.game.window, colour, (x*self.pixelWidth, y*self.pixelHeight, self.pixelWidth*nInGamePixels, self.pixelHeight*nInGamePixels))
-        self.blit_screen() 
+        pygame.draw.rect(self.game.display, colour, (x*self.pixelWidth, y*self.pixelHeight, self.pixelWidth*nInGamePixels, self.pixelHeight*nInGamePixels))
+        #self.blit_screen() 
 
     def draw_points(self, nInGamePixels, colourIfNotVisited, colourIfVisited):
         """

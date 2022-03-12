@@ -1,5 +1,6 @@
 import pygame
 from menu import MainMenu, OptionsMenu, CreditsMenu
+from map import Map
 
 class Game():
     def __init__(self):
@@ -18,19 +19,33 @@ class Game():
         pygame.display.set_caption('Tūrisma rallijs Liepāja 2022')
         self.font_name = 'consolas'
         self.BLACK, self.WHITE  = (0, 0, 0),(255, 255, 255)
+        self.RED, self.GREEN, self.BLUE = (255,0,0), (0,255,0), (0,0,255)
+        self.SKYBLUE, self.MAGENTA, self.YELLOW = (0,255, 255), (255, 0, 255), (255, 255, 0)
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
         self.curr_menu = self.main_menu #current menu
+        self.map_running = False
 
     def game_loop(self):
         """
         Main game loop.
         """
+        self.map = Map(self)
+        self.map_running = True
         while self.playing:
             self.check_events()
             if self.START_KEY:
                 self.playing = False
+                self.notplaying = True
+            if self.map_running:
+                self.map.run_map()
+            self.reset_keys()
+        while self.notplaying:
+            self.check_events()
+            if self.START_KEY:
+                self.notplaying = False
+                self.running = False
             self.display.fill(self.BLACK)
             self.draw_text('Thanks for playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
             self.window.blit(self.display, (0, 0))
