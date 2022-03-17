@@ -1,6 +1,7 @@
 import pygame
-from menu import MainMenu, OptionsMenu, CreditsMenu
+from menu import MainMenu, OptionsMenu, CreditsMenu, CarMenu
 from map import Map
+from car_game import CarGame
 
 class Game():
     def __init__(self):
@@ -11,6 +12,7 @@ class Game():
         pygame.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
+        self.LEFT_KEY, self.RIGHT_KEY = False, False
         self.DISPLAY_W, self.DISPLAY_H = 1000, 1000
         self.display = pygame.Surface((self.DISPLAY_W, self.DISPLAY_H)) #create canvas
         self.window = pygame.display.set_mode((self.DISPLAY_W, self.DISPLAY_H))
@@ -24,28 +26,33 @@ class Game():
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
+        self.car_menu = CarMenu(self)
         self.curr_menu = self.main_menu #current menu
         self.map_running = False
+        self.car = None
+        self.map = Map(self)
+        self.car_game = CarGame(self)
+        #
+        self.CHARGE_LEVEL = 100 #charge percent
 
     def game_loop(self):
         """
         Main game loop.
         """
-        self.map = Map(self)
-        self.map_running = True
+
         while self.playing:
             self.check_events()
             if self.START_KEY:
-                self.playing = False
-                self.notplaying = True
-            if self.map_running:
-                self.map.run_map()
-            self.reset_keys()
-        while self.notplaying:
-            self.check_events()
-            if self.START_KEY:
-                self.notplaying = False
-                self.running = False
+                self.playing = True
+            # if self.map_running:
+            #     self.map.run_map()
+            #self.reset_keys()
+        # while not self.playing:
+        #     self.check_events()
+        #     if self.START_KEY:
+        #         self.playing = True
+        #         self.running = False
+
             self.display.fill(self.BLACK)
             self.draw_text('Thanks for playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
             self.window.blit(self.display, (0, 0))
@@ -69,12 +76,17 @@ class Game():
                     self.DOWN_KEY = True
                 if event.key == pygame.K_UP:
                     self.UP_KEY = True
+                if event.key == pygame.K_LEFT:
+                    self.LEFT_KEY = True
+                if event.key == pygame.K_RIGHT:
+                    self.RIGHT_KEY = True
 
     def reset_keys(self):
         """
         Resets pressed keys.
         """
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
+        self.LEFT_KEY, self.RIGHT_KEY = False, False
 
     def draw_text(self, text, size, x, y):
         """

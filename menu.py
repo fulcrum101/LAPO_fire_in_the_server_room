@@ -96,7 +96,7 @@ class MainMenu(Menu):
         self.move_cursor()
         if self.game.START_KEY:
             if self.state == 'Start':
-                self.game.playing = True
+                self.game.curr_menu = self.game.car_menu
             elif self.state == 'Options':
                 self.game.curr_menu = self.game.options
             elif self.state == 'Credits':
@@ -179,6 +179,108 @@ def CreditsMenu(Menu):
             self.game.draw_text('- Ramona Poreitere', 25, self.mid_w, self.mid_h + 85)
             self.game.draw_text('- Aleksandrs Vjaters', 25, self.mid_w, self.mid_h + 110)
             self.blit_screen()
+
+import os
+
+class CarMenu(Menu):
+    def __init__(self, game):
+        """
+        Initialize MainMenu object.
+        Subclass from Menu class.
+
+        :param game: (Game [game.py]) Main Game object.
+        """
+        Menu.__init__(self, game)
+        self.cars = []
+        self.read_cars()
+        self.cursor_pos = [(220, self.mid_h+40), (440, self.mid_h+40), (660, self.mid_h+40), (880, self.mid_h+40),
+                           (330, self.mid_h + 300), (550, self.mid_h + 300), (770, self.mid_h + 300)]
+        self.cur_i = 0
+        self.cursor_rect.midtop = self.cursor_pos[self.cur_i]
+
+    def read_cars(self, path='images/race_game/cars'):
+        """
+        Reads all available car images. (const 7)
+        """
+        self.cars = [pygame.transform.scale(pygame.image.load(os.path.join(path, filename)), (100, 200)) for filename in os.listdir(path)]
+
+    def draw_cars(self):
+        """
+        Draws 7 cars for user to choose color.
+        """
+        self.game.display.blit(self.cars[0], (120, self.mid_h - 200))
+        self.game.display.blit(self.cars[1], (340, self.mid_h - 200))
+        self.game.display.blit(self.cars[2], (560, self.mid_h - 200))
+        self.game.display.blit(self.cars[3], (780, self.mid_h - 200))
+
+        self.game.display.blit(self.cars[4], (230, self.mid_h + 60))
+        self.game.display.blit(self.cars[5], (450, self.mid_h + 60))
+        self.game.display.blit(self.cars[6], (670, self.mid_h + 60))
+
+    def move_cursor_right(self):
+        """
+        Moves cursor to the right.
+        """
+        if self.cur_i == 6:
+            self.cur_i = 0
+        else:
+            self.cur_i = self.cur_i + 1
+        self.update_curs()
+
+    def move_cursor_left(self):
+        """
+        Moves cursor to the left.
+        """
+        if self.cur_i == 0:
+            self.cur_i = 6
+        else:
+            self.cur_i = self.cur_i - 1
+        self.update_curs()
+
+    def update_curs(self):
+        """
+        Updates the position of cursor.
+        """
+        self.cursor_rect.midtop = self.cursor_pos[self.cur_i]
+
+    def display_menu(self):
+        """
+        Displays menu.
+        Main menu loop.
+        """
+        #
+        self.run_display = True
+        while self.run_display:
+            self.game.check_events()
+            self.check_input()
+            self.game.display.fill(self.game.BLACK)
+            self.draw_cars()
+            self.draw_cursor()
+            self.game.draw_text('Izvelēties auto', 45, self.mid_w, self.mid_h - 250)
+            self.blit_screen()
+
+    def check_input(self):
+        """
+        Listens for keyboard events and changes Menu.state state.
+        """
+        if self.game.BACK_KEY:
+            self.game.curr_menu = self.game.main_menu
+            self.run_display = False
+        elif self.game.START_KEY:
+            self.game.car = pygame.transform.scale(self.cars[self.cur_i], (100, 200))
+            self.game.playing = True
+            #self.game.map.display_map()
+            self.game.car_game.run_car()
+        if self.game.RIGHT_KEY:
+            self.move_cursor_right()
+        elif self.game.LEFT_KEY:
+            self.move_cursor_left()
+
+
+
+
+
+
 
 
 

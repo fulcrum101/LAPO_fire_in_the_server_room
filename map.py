@@ -30,15 +30,19 @@ class Map():
         self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
     
-    def run_map(self):
+    def display_map(self):
         """
         Displays map.
         """
         #self.draw_points(4, self.game.MAGENTA, self.game.MAGENTA)
-        self.blit_screen()
-        if(self.game.BACK_KEY==True):
-            self.running = False
-            self.game.curr_menu = self.game.credits
+        self.running = True
+        while self.running:
+            self.game.check_events()
+            if self.game.BACK_KEY:
+                self.running = False
+                self.game.curr_menu = self.game.credits
+
+            self.blit_screen()
         
 
     def getPointData(self, filePath):
