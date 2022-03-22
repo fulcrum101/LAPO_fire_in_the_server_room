@@ -11,9 +11,9 @@ class CarGame():
         self.mid_w, self.mid_h = self.game.DISPLAY_W / 2, self.game.DISPLAY_H / 2
         self.x_pos = [285, 395, 505, 615]
         self.car_x = self.x_pos[-1]
-        self.car_y = self.mid_h - 50
+        self.car_y = self.mid_h*2 - 350
         self.enemy_cars = [pygame.transform.scale(i, (100, 200)) for i in self.game.car_menu.cars]
-        self.enemy_car_speed = 25
+        self.enemy_car_speed = 20
         self.enemy_car_img = self.enemy_cars[0]
         self.enemy_car_startx = self.x_pos[0]
         self.enemy_car_starty = -100
@@ -38,25 +38,29 @@ class CarGame():
             self.enemy_car_starty += self.enemy_car_speed
 
             if self.enemy_car_starty > self.game.DISPLAY_H:
-                self.enemy_car_starty = -100
+                self.enemy_car_starty = -200
                 self.get_new_enemy_car()
 
             self.count += 1
-            if self.count % 100 == 0:
-                self.enemy_car_speed += 1
 
             car_rect = self.game.car.get_rect(topleft=(self.car_x, self.car_y))
             enemy_rect = self.enemy_car_img.get_rect(topleft=(self.enemy_car_startx, self.enemy_car_starty))
             if car_rect.colliderect(enemy_rect):
 
-                #if self.enemy_car_startx < self.car_x < self.enemy_car_startx + 50 or self.enemy_car_startx < self.car_x + 50 < self.enemy_car_startx + 50:
-                self.game.CHARGE_LEVEL = int(self.game.CHARGE_LEVEL / 2)
-                self.car_x = self.x_pos[-1]
-                self.car_y = self.mid_h - 50
-            if self.car_x< 275 or self.car_x > 625:
-                self.game.CHARGE_LEVEL = int(self.game.CHARGE_LEVEL / 2)
-                self.car_x = self.x_pos[-1]
-                self.car_y = self.mid_h - 50
+                self.game.CHARGE_LEVEL = int(self.game.CHARGE_LEVEL)-20
+                if self.car_x == self.x_pos[0]:
+                    self.car_x = self.x_pos[1]
+                elif self.car_x == self.x_pos[-1]:
+                    self.car_x = self.x_pos[-2]
+                else:
+                    self.car_x = self.x_pos[self.x_pos.index(self.car_x)+random.choice([-1,1])] #sets car_x to nearest other line
+            if self.car_x < 275:
+                self.game.CHARGE_LEVEL = int(self.game.CHARGE_LEVEL)-20
+                self.car_x = 285
+            elif self.car_x > 625:
+                self.game.CHARGE_LEVEL = int(self.game.CHARGE_LEVEL)-20
+                self.car_x = 615
+
             self.blit_screen()
         self.game.curr_menu = self.game.main_menu
 
