@@ -6,7 +6,8 @@ Liepājas atklātā programmēšanas olimpiādes 2022 komandas "Fire in the serv
 Metadata:
  - Language: `Python 3.10`
  - Libraries:
-   - `pygame 2.1.2 (SDL 2.0.18, Python 3.10.0)`
+   - `Pygame 2.1.2 (SDL 2.0.18, Python 3.10.0)`
+ - Music (non-copyrighted) taken from [here](https://tunetank.com/tracks/5524-summer-chill/)
  - Graphics: Pixelated / Undertale style
  - Multiplayer: No
  - Task formats:

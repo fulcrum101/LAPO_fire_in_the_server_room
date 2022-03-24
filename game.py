@@ -2,6 +2,8 @@ import pygame
 from menu import MainMenu, OptionsMenu, CreditsMenu, CarMenu
 from map import Map
 from car_game import CarGame
+from pygame import mixer
+import sys
 
 class Game():
     def __init__(self):
@@ -32,14 +34,18 @@ class Game():
         self.car = None
         self.map = Map(self)
         self.car_game = CarGame(self)
-        #
+        self.SOUND_VOLUME = 25
         self.CHARGE_LEVEL = 100 #charge percent
+
 
     def game_loop(self):
         """
         Main game loop.
         """
-
+        mixer.init()
+        mixer.music.load("audio/tunetank.com_5524_summer-chill_by_cloudsystem.mp3")
+        mixer.music.set_volume(self.SOUND_VOLUME)
+        mixer.music.play(-1)
         while self.playing:
             self.check_events()
             if self.START_KEY:
@@ -58,6 +64,7 @@ class Game():
             self.window.blit(self.display, (0, 0))
             pygame.display.update() # flush
             self.reset_keys()
+            sys.exit()
 
     def check_events(self):
         """
