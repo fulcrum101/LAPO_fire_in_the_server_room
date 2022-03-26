@@ -15,14 +15,33 @@
 ## 1. veids - caur IDE (PyCharm vai VsCode u.c.)
 
 1. Atveriet lejupladētu projektu savā IDE.
-
 2. Palaidiet `main.py` failu.
 
 ## 2. veids - caur terminālu.
 
 1. Atveriet lejupladēta projekta mapītes adresi lietojot komandu `cd filepath\to\project\folder`.
-
 2. Izmanotjot komandu `python main.py` palaidiet `main.py`.
 
-*Piebilde:* Lejuplādēto bobliotēku versijas var parbaudīt palaidot `Library_version.py`.
+### *Piebilde:* Lejuplādēto bobliotēku versijas var parbaudīt palaidot `Library_version.py`.
 
+# Spēles kontrole - Menu
+
+## Main menu
+
+- Kursoru var kustīnat spiežot uz ↑ un ↓ taustītem.
+- Lai izvēlēties kādu menu punktu, uzspiediet `Enter`.
+- Lai atgriezties atpakaļ, uzspiediet uz `Backspace`.
+
+## Iestatījumu menu
+
+- Skaņas skaļuma palielināšana par 10% veic ↑ taustīte.
+- Skaņas skaļuma palielināšana par 10% veic ↓ taustīte.
+
+## Auto izvelēšanas menu
+
+- Kursoru kustīna izmantojot ← un → taustītes.
+- Lai izvelēties automašīnas dizainu, uzspiediet uz `Enter`.
+
+# Auto trasē spēlīte
+
+- Lai mainīt joslu, spiediet uz ← un → taustītēm.
