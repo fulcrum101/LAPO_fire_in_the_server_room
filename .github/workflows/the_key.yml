@@ -1,3 +1,0 @@
-name: Get Key
-with:
-  PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
