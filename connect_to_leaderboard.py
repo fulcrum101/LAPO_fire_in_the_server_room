@@ -3,11 +3,7 @@ from firebase_admin import db
 import json, os
 
 def upload_result(name,  points, time):
-    with open('leaderboard_database/lapoleaderboard-firebase-adminsdk-shvog-0bbe9e7049.json') as f:
-        cert = json.load(f)
-
-    cert["private_key"] = os.environ["PRIV_K"]
-    cred_obj = firebase_admin.credentials.Certificate(cert)
+    cred_obj = firebase_admin.credentials.Certificate('leaderboard_database/lapoleaderboard-firebase-adminsdk-shvog-0e31c6bc10.json')
     default_app = firebase_admin.initialize_app(cred_obj, {'databaseURL': 'https://lapoleaderboard-default-rtdb.europe-west1.firebasedatabase.app/'})
     ref = db.reference("/")
     res = {
