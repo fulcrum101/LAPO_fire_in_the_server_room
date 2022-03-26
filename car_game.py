@@ -1,10 +1,10 @@
 import pygame
 import random
-from time import sleep
+from time import time
 
 class CarGame():
     def __init__(self, game):
-        self.count = 0
+        self.movement_done = 0
         self.game = game
         self.running = True
         self.crash = False
@@ -25,11 +25,13 @@ class CarGame():
         self.enemy_car_img = random.choice(self.enemy_cars)
         self.enemy_car_startx = random.choice(self.x_pos)
 
-    def run_car(self):
-        while self.game.CHARGE_LEVEL != 0:
+    def run_car(self, distance):
+        starttime=time()
+        while self.game.CHARGE_LEVEL != 0 and distance>(time()-starttime)/10:
             self.game.display.fill(self.game.BLACK)
             self.game.display.blit(self.bgImg, (0, 0))
             self.game.draw_text(f'Charge level: {self.game.CHARGE_LEVEL}%', 20, 100, 45)
+            self.game.draw_text(f'Distance: {round(time()-starttime)/10}/{distance}', 20, 900, 45)
             self.game.display.blit(self.game.car, (self.car_x, self.car_y))
             self.game.check_events()
             self.check_input()
@@ -41,7 +43,7 @@ class CarGame():
                 self.enemy_car_starty = -200
                 self.get_new_enemy_car()
 
-            self.count += 1
+            self.movement_done += 1
 
             car_rect = self.game.car.get_rect(topleft=(self.car_x, self.car_y))
             enemy_rect = self.enemy_car_img.get_rect(topleft=(self.enemy_car_startx, self.enemy_car_starty))

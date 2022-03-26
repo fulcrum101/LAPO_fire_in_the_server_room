@@ -33,7 +33,7 @@ class Game():
         self.map = Map(self)
         self.car_game = CarGame(self)
         #
-        self.CHARGE_LEVEL = 100 #charge percent
+        self.CHARGE_LEVEL = 100.0 #charge percent
 
     def game_loop(self):
         """
