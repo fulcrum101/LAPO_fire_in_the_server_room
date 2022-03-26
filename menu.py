@@ -149,12 +149,11 @@ class OptionsMenu(Menu):
         elif self.game.UP_KEY:
             self.game.SOUND_VOLUME = min(self.game.SOUND_VOLUME+10, 100)
             self.update_sound()
-        print(self.game.SOUND_VOLUME)
 
     def update_sound(self):
         pygame.mixer.music.set_volume(self.game.SOUND_VOLUME)
 
-def CreditsMenu(Menu):
+class CreditsMenu(Menu):
     def __init__(self, game):
         """
         Initialize CreditsMenu object.
@@ -162,8 +161,8 @@ def CreditsMenu(Menu):
 
         :param game: (Game [game.py]) Main Game object.
         """
-        Menu.__init__(self.game)
-
+        Menu.__init__(self, game)
+        print('Initialized')
 
     def display_menu(self):
         """

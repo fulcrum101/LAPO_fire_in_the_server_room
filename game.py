@@ -5,7 +5,7 @@ from car_game import CarGame
 from pygame import mixer
 import sys
 
-class Game():
+class Game:
     def __init__(self):
         """
         Initialize Game object.
@@ -53,14 +53,6 @@ class Game():
             self.check_events()
             if self.START_KEY:
                 self.playing = True
-            # if self.map_running:
-            #     self.map.run_map()
-            #self.reset_keys()
-        # while not self.playing:
-        #     self.check_events()
-        #     if self.START_KEY:
-        #         self.playing = True
-        #         self.running = False
 
             self.display.fill(self.BLACK)
             self.draw_text('Thanks for playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
