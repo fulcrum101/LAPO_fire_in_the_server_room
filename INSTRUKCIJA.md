@@ -1,13 +1,10 @@
 # Spēles uzstādināšanā
 
 1. Lejupladējiet `Python` programmēšanas valodu. `Python` versija `3.10.` (kas tika izmantots) ir pieejams [šeit](https://www.python.org/downloads/release/python-3100/).
-
-2. Bibliotēkas `Pygame` lejupladēšana. Atvērot terminālu, palaidiet komandu `pip install` pygame. Pygame versija, ko mēs izmantojam ir Pygame `2.1.2.`.
-
-3. Lejupladējiet kodu no GitHub Repository https://github.com/fulcrum101/LAPO_fire_in_the_server_room
-
+2. Bibliotēkas `Pygame` lejupladēšana. Atvērot terminālu, palaidiet komandu `pip install pygame`. Pygame versija, ko mēs izmantojam ir Pygame `2.1.2.`.
+3. Bibliotēkas `Boto3` lejupladēšana. Atvērot terminālu, palaidiet komandu `pip install boto3`. Pygame versija, ko mēs izmantojam ir Pygame `1.21.27.`.
+4. Lejupladējiet kodu no GitHub Repository https://github.com/fulcrum101/LAPO_fire_in_the_server_room
     a. kā .zip failu un dearhivējott to
-
     b. Caur `git clone` komandu vai GitHub Desktop (klonējot)
 
 # Spēles sākums

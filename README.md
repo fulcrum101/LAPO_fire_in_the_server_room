@@ -7,6 +7,7 @@ Metadata:
  - Language: `Python 3.10`
  - Libraries:
    - `Pygame 2.1.2 (SDL 2.0.18, Python 3.10.0)`
+   - `Boto3 1.21.27`
  - Music (non-copyrighted) taken from [here](https://tunetank.com/tracks/5524-summer-chill/)
  - Graphics: Pixelated / Undertale style
  - Multiplayer: No

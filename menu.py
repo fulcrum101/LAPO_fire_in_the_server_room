@@ -162,7 +162,6 @@ class CreditsMenu(Menu):
         :param game: (Game [game.py]) Main Game object.
         """
         Menu.__init__(self, game)
-        print('Initialized')
 
     def display_menu(self):
         """

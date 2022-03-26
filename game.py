@@ -3,7 +3,8 @@ from menu import MainMenu, OptionsMenu, CreditsMenu, CarMenu
 from map import Map
 from car_game import CarGame
 from pygame import mixer
-import sys
+import sys, time
+from connect_to_leaderboard import upload_result
 
 class Game:
     def __init__(self):
@@ -37,29 +38,37 @@ class Game:
         self.car = None
         self.map = Map(self)
         self.car_game = CarGame(self)
-
+        self.POINTS = 1000
         self.CHARGE_LEVEL = 100 #charge percent
         mixer.music.set_volume(self.SOUND_VOLUME)
         mixer.music.play(-1)
+        self.start_time = None
+        self.end_time=None
+        self.NAME=None
 
 
     def game_loop(self):
         """
         Main game loop.
         """
-
-
+        self.start_time = time.time()
         while self.playing:
             self.check_events()
             if self.START_KEY:
                 self.playing = True
 
+            self.end_time = time.time()
             self.display.fill(self.BLACK)
             self.draw_text('Thanks for playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
             self.window.blit(self.display, (0, 0))
             pygame.display.update() # flush
             self.reset_keys()
+            print(f"Jūsu punktu skaits: {self.POINTS}.")
+            print(f"Jūsu laiks: {elf.end_time-self.start_time}.")
+            self.NAME = input("Kāds ir Jūsu vārds? - ")
+            upload_result(self.NAME, self.POINTS, self.end_time-self.start_time)
             sys.exit()
+
 
     def check_events(self):
         """
