@@ -274,7 +274,8 @@ class CarMenu(Menu):
             self.game.car = pygame.transform.scale(self.cars[self.cur_i], (100, 200))
             self.game.playing = True
             #self.game.map.display_map()
-            self.game.car_game.run_car()
+            print("Go!")
+            self.game.car_game.run_car(10)
         if self.game.RIGHT_KEY:
             self.move_cursor_right()
         elif self.game.LEFT_KEY:
