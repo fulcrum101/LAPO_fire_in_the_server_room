@@ -13,7 +13,6 @@ class Map():
         self.pixelWidth, self.pixelHeight = 5, 5 # where do i get this from???
         self.running = self.game.map_running
         self.cursor_rect = pygame.Rect(0, 0, 45, 45) # x, y, width, height
-        baseSurface = pygame.image.load("images/map/base-map.png")
         self.latitudeMin = 55.5
         self.latitudeMax = 57.9
         self.longitudeMin = 20.0

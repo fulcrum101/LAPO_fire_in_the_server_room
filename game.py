@@ -25,6 +25,9 @@ class Game():
         self.BLACK, self.WHITE  = (0, 0, 0),(255, 255, 255)
         self.RED, self.GREEN, self.BLUE = (255,0,0), (0,255,0), (0,0,255)
         self.SKYBLUE, self.MAGENTA, self.YELLOW = (0,255, 255), (255, 0, 255), (255, 255, 0)
+        mixer.init()
+        mixer.music.load("audio/tunetank.com_5524_summer-chill_by_cloudsystem.mp3")
+        self.SOUND_VOLUME = 10
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
@@ -34,18 +37,18 @@ class Game():
         self.car = None
         self.map = Map(self)
         self.car_game = CarGame(self)
-        self.SOUND_VOLUME = 25
+
         self.CHARGE_LEVEL = 100 #charge percent
+        mixer.music.set_volume(self.SOUND_VOLUME)
+        mixer.music.play(-1)
 
 
     def game_loop(self):
         """
         Main game loop.
         """
-        mixer.init()
-        mixer.music.load("audio/tunetank.com_5524_summer-chill_by_cloudsystem.mp3")
-        mixer.music.set_volume(self.SOUND_VOLUME)
-        mixer.music.play(-1)
+
+
         while self.playing:
             self.check_events()
             if self.START_KEY:

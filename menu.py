@@ -129,9 +129,12 @@ class OptionsMenu(Menu):
             self.game.display.fill(self.game.BLACK)
             self.game.draw_text('Iestatījumi', 50, self.mid_w, self.mid_h - 50)
             self.game.draw_text('Skaņa', 35, self.volx, self.voly)
-            self.game.draw_text('Kontrole', 35, self.controlsx, self.controlsy)
+            self.draw_sound_settings()
             self.draw_cursor()
             self.blit_screen()
+
+    def draw_sound_settings(self):
+        self.game.draw_text("-"*(int(self.game.SOUND_VOLUME/10)), 35, 650, self.voly)
 
     def check_input(self):
         """
@@ -140,16 +143,16 @@ class OptionsMenu(Menu):
         if self.game.BACK_KEY:
             self.game.curr_menu = self.game.main_menu
             self.run_display = False
-        elif self.game.UP_KEY or self.game.DOWN_KEY:
-            if self.state == 'Volume':
-                self.state = 'Controls'
-                self.cursor_rect.midtop = (self.controlsx + self.offset, self.controlsy)
-            elif self.state == 'Controls':
-                self.state = 'Volume'
-                self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
-        elif self.game.START_KEY:
-            # TODO: Create a Volume menu and a Controls menu
-            pass
+        if self.game.DOWN_KEY :
+            self.game.SOUND_VOLUME = max(self.game.SOUND_VOLUME - 10, 0)
+            self.update_sound()
+        elif self.game.UP_KEY:
+            self.game.SOUND_VOLUME = min(self.game.SOUND_VOLUME+10, 100)
+            self.update_sound()
+        print(self.game.SOUND_VOLUME)
+
+    def update_sound(self):
+        pygame.mixer.music.set_volume(self.game.SOUND_VOLUME)
 
 def CreditsMenu(Menu):
     def __init__(self, game):
@@ -160,6 +163,7 @@ def CreditsMenu(Menu):
         :param game: (Game [game.py]) Main Game object.
         """
         Menu.__init__(self.game)
+
 
     def display_menu(self):
         """
@@ -269,8 +273,8 @@ class CarMenu(Menu):
         elif self.game.START_KEY:
             self.game.car = pygame.transform.scale(self.cars[self.cur_i], (100, 200))
             self.game.playing = True
-            self.game.map.display_map()
-            #self.game.car_game.run_car()
+            #self.game.map.display_map()
+            self.game.car_game.run_car()
         if self.game.RIGHT_KEY:
             self.move_cursor_right()
         elif self.game.LEFT_KEY:
