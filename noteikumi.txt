@@ -1,3 +1,20 @@
 Noteikumi
 
+    - Spēles scenārijs paredz, ka spēlētājs pārvietojas ar elektroauto, kas bez uzlādes labos laikaapstākļos spēj  nobraukt  140  km,  bet  lietus  laikā  80km.
+
+    - Sākumā spēlētājiem ir 500 punktu. Maksimālais punktu skiats, ko var dabūt vienā kontrolpunkltā ir 1000.
+
+    - Lai pilnība uzlādētu auto, vajag 2500 punktus.
+
+    - Spēlētājam nav iespējas atgriezties kontrolpunktā, kurā jau ir bijis.
+
+    - Katrā kontrolpunktā ir jāatrisina uzdevums/us par vietu, kurāatrodas kontrolpunkts.
+
+    - Katrā uzlādes stācijā ir jāatrisina vienkaršo matemātisko uzdevumu (par reizināšanas tabulu).
+
+    - Starp kontrolpunktiem ir maza spēlīte ar automašīnam. Ieskejoties citā mašinā vai izbaucot ārpus ceļa robežas spēlētājs zaudē 20% automāšinas uzlādes.
+
+    - Ja automašīnas uzlādes līmenis ir 0, tad spēlētājam jāizvelas tuvāko uzlādes stāciju un viņš zaudē 3500 punktus.
+
+    - Ja spēlētājam beidzas punkti - spēle beidzas.
 

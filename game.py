@@ -5,6 +5,7 @@ from car_game import CarGame
 from pygame import mixer
 import sys, time
 from connect_to_leaderboard import upload_result
+import codecs
 
 class Game:
     def __init__(self):
@@ -38,7 +39,7 @@ class Game:
         self.car = None
         self.map = Map(self)
         self.car_game = CarGame(self)
-        self.POINTS = 1000
+        self.POINTS = 500
         self.CHARGE_LEVEL = 100 #charge percent
         mixer.music.set_volume(self.SOUND_VOLUME)
         mixer.music.play(-1)
@@ -52,38 +53,25 @@ class Game:
         Main game loop.
         """
         self.start_time = time.time()
-        # while self.playing:
-        #     self.check_events()
-        #     if self.START_KEY:
-        #         self.playing = True
-        #
-        #     self.end_time = time.time()
-        #     self.display.fill(self.BLACK)
-        #     self.draw_text('Thanks for playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
-        #     self.window.blit(self.display, (0, 0))
-        #     pygame.display.update() # flush
-        #     self.reset_keys()
-        #     pygame.display.quit()
-        #     pygame.quit()
-        #     print(f"Jūsu punktu skaits: {self.POINTS}.")
-        #     print(f"Jūsu laiks: {self.end_time-self.start_time}.")
-        #     self.NAME = input("Kāds ir Jūsu vārds? - ")
-        #     upload_result(self.NAME, self.POINTS, self.end_time-self.start_time)
-        #     sys.exit()
+        while self.playing:
+            self.check_events()
+            if self.START_KEY:
+                self.playing = True
 
-        self.end_time = time.time()
-        self.display.fill(self.BLACK)
-        self.draw_text('Thanks for playing', 20, self.DISPLAY_W / 2, self.DISPLAY_H / 2)
-        self.window.blit(self.display, (0, 0))
-        pygame.display.update()  # flush
-        self.reset_keys()
-        pygame.display.quit()
-        pygame.quit()
-        print(f"Jūsu punktu skaits: {self.POINTS}.")
-        print(f"Jūsu laiks: {self.end_time - self.start_time}.")
-        self.NAME = input("Kāds ir Jūsu vārds? - ")
-        upload_result(self.NAME, self.POINTS, self.end_time - self.start_time)
-        sys.exit()
+            self.end_time = time.time()
+            self.display.fill(self.BLACK)
+            self.draw_text('Thanks for playing', 20, self.DISPLAY_W/2, self.DISPLAY_H/2)
+            self.window.blit(self.display, (0, 0))
+            pygame.display.update() # flush
+            self.reset_keys()
+            pygame.display.quit()
+            pygame.quit()
+            print(f"Jūsu punktu skaits: {self.POINTS}.")
+            print(f"Jūsu laiks: {self.end_time-self.start_time}.")
+            self.NAME = input("Kāds ir Jūsu vārds? - ")
+            upload_result(self.NAME, self.POINTS, self.end_time-self.start_time)
+            sys.exit()
+
 
 
     def check_events(self):
@@ -107,6 +95,8 @@ class Game:
                     self.LEFT_KEY = True
                 if event.key == pygame.K_RIGHT:
                     self.RIGHT_KEY = True
+                if event.key == pygame.K_n:
+                    self.print_noteikumi()
 
     def reset_keys(self):
         """
@@ -128,6 +118,13 @@ class Game:
         text_rect = text_surface.get_rect()
         text_rect.center = (x, y)
         self.display.blit(text_surface, text_rect)
+
+    def print_noteikumi(self):
+        text=""
+        with codecs.open("noteikumi.txt", encoding='utf-8') as f:
+            for line in f:
+                text+=line
+        print(text)
 
 
 
