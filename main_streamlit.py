@@ -12,7 +12,10 @@ def main():
     st.title('Tūrisma rallijs Liepāja 2022')
     st.caption('Tūrisma rallijs Liepāja 2022')
     cred_obj = firebase_admin.credentials.Certificate('leaderboard_database/lapoleaderboard-firebase-adminsdk-shvog-0e31c6bc10.json')
-    default_app = firebase_admin.initialize_app(cred_obj, {'databaseURL': 'https://lapoleaderboard-default-rtdb.europe-west1.firebasedatabase.app/'})
+    try:
+        default_app = firebase_admin.initialize_app(cred_obj, {'databaseURL': 'https://lapoleaderboard-default-rtdb.europe-west1.firebasedatabase.app/'})
+    except ValueError:
+        pass
     results = db.reference('/').get()
     list = []
     for x in results:
@@ -20,6 +23,5 @@ def main():
     df = pd.DataFrame(list)
     df = df.sort_values(by=['points'])
     st.dataframe(df)
-
 if __name__ == "__main__":
     main()

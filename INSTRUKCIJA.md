@@ -42,3 +42,9 @@
 # Auto trasē spēlīte
 
 - Lai mainīt joslu, spiediet uz ← un → taustītēm.
+
+# Statistika spēles beigās
+
+- Visa statistika paradas pēc spēles aizveršanas termināla.
+- Jāievada savu nickname/vārdu.
+- Labākos rezultātus var skatīties real-time [šeit](https://share.streamlit.io/fulcrum101/lapo_fire_in_the_server_room/main/main_streamlit.py). 
