@@ -21,6 +21,10 @@
 
 ### *Piebilde:* Lejuplādēto bobliotēku versijas var parbaudīt palaidot `Library_version.py`.
 
+# Noteikumu lasīšana
+
+- Noteikumus var palasīt spiežot jebkurā laika brīdī uz taustiņu `n`. Noteikumi parādas terminālā.
+
 # Spēles kontrole - Menu
 
 ## Main menu

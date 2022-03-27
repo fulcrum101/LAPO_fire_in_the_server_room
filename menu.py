@@ -168,11 +168,15 @@ class CreditsMenu(Menu):
         Displays menu.
         Main menu loop.
         """
+        self.game.print_noteikumi()
         self.run_display = True
         while self.run_display:
             self.game.check_events()
-            if self.game.START_KEY or self.game.BACK_KEY:
+            if  self.game.BACK_KEY:
                 self.game.curr_menu = self.game.main_menu
+                self.run_display = False
+            elif self.game.START_KEY:
+                self.game.curr_menu = self.game.car_menu
                 self.run_display = False
             self.game.display.fill(self.game.BLACK)
             self.game.draw_text('Par spēli', 50, self.mid_w, self.mid_h - 50)
@@ -180,6 +184,7 @@ class CreditsMenu(Menu):
             self.game.draw_text('- Veronika Lohmanova', 25, self.mid_w, self.mid_h + 60)
             self.game.draw_text('- Ramona Poreitere', 25, self.mid_w, self.mid_h + 85)
             self.game.draw_text('- Aleksandrs Vjaters', 25, self.mid_w, self.mid_h + 110)
+            self.game.draw_text('Lai sākt spēli nospiediet Enter', 20, self.mid_w, self.mid_h + 200)
             self.blit_screen()
 
 import os
