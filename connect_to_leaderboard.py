@@ -12,4 +12,4 @@ def upload_result(name,  points, time):
         "time": time
     }
     json_object = json.dumps(res, indent=4)
-    ref.set(json_object)
+    ref.push(json_object)
