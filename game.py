@@ -6,7 +6,7 @@ from pygame import mixer
 import sys, time
 from connect_to_leaderboard import upload_result
 import codecs
-
+from quizz import Quizz
 class Game:
     def __init__(self):
         """
@@ -35,6 +35,7 @@ class Game:
         self.credits = CreditsMenu(self)
         self.car_menu = CarMenu(self)
         self.curr_menu = self.main_menu #current menu
+        self.quizz = Quizz(self)
         self.map_running = False
         self.car = None
         self.map = Map(self)
@@ -46,6 +47,7 @@ class Game:
         self.start_time = None
         self.end_time=None
         self.NAME=None
+        self.MAX_POINTS_Q = 250 # Max points given for one question
 
 
     def game_loop(self):

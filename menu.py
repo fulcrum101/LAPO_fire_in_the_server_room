@@ -1,6 +1,6 @@
 import pygame
 
-class Menu():
+class Menu:
     def __init__(self, game):
         """
         Initializes Menu object.
@@ -278,7 +278,8 @@ class CarMenu(Menu):
             self.game.playing = True
             #self.game.map.display_map()
             print("Go!")
-            self.game.car_game.run_car(10)
+            #self.game.car_game.run_car(10)
+            self.game.quizz.ControlPointQuizz(54)
         if self.game.RIGHT_KEY:
             self.move_cursor_right()
         elif self.game.LEFT_KEY:
