@@ -11,13 +11,9 @@ Metadata:
  - Music (non-copyrighted) taken from [here](https://tunetank.com/tracks/5524-summer-chill/)
  - Graphics: Pixelated / Undertale style
  - Multiplayer: No
- - Task formats:
-   - Wordle
-   - Kahoot
  - Weather conditions: Random
  - Start: RV1Ģ
  - Finish: ?
- - Base: No
  - Window size: 1000 x 1000
  - Pixel size: 5x5
 
