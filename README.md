@@ -2,6 +2,7 @@
 Liepājas atklātā programmēšanas olimpiādes 2022 komandas "Fire in the server room" risinājums.
 
 
+[Online leaderboard](https://share.streamlit.io/fulcrum101/lapo_fire_in_the_server_room/main/main_streamlit.py)
 
 Metadata:
  - Language: `Python 3.10`

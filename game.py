@@ -7,6 +7,7 @@ import sys, time
 from connect_to_leaderboard import upload_result
 import codecs
 from quizz import Quizz
+from quizz_chargingstation import ChargeQuizz
 class Game:
     def __init__(self):
         """
@@ -36,6 +37,7 @@ class Game:
         self.car_menu = CarMenu(self)
         self.curr_menu = self.main_menu #current menu
         self.quizz = Quizz(self)
+        self.charge_quizz = ChargeQuizz(self)
         self.map_running = False
         self.car = None
         self.map = Map(self)
