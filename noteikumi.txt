@@ -18,3 +18,5 @@ Noteikumi
 
     - Ja spēlētājam beidzas punkti - spēle beidzas.
 
+    - Sākumā tiek doti 500 punkti. Par katro pareizi atbildēto jautājumu kontrolpunktā var dabūt maksimāli 250 punktus. Lai uzladētu uz 100% automašīnu maksimāli vajag 750 punktus.
+

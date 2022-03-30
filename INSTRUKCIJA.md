@@ -47,6 +47,12 @@
 
 - Lai mainīt joslu, spiediet uz ← un → taustītēm.
 
+# Jautājumu atbilžu izvēle (gan kontrolpunktiem, gan uzlādešanas stācijam)
+
+- Kursoru var kustīnat spiežot uz ↑ un ↓ taustītem.
+- Lai izvēlēties atbildi, uzspiediet `Enter`.
+- Ziņas par atbildes korrektumu un punktu skaita izmaiņu tiek izvādītas terminālā.
+
 # Statistika spēles beigās
 
 - Visa statistika paradas pēc spēles aizveršanas termināla.
