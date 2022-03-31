@@ -596,22 +596,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Tērvetes dabas parks visitors",
-        "id": 46,
-        "roads": "78 ",
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.373316,
-          56.487644
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Astarte Tīreļi",
         "id": 47,
         "roads": "19 31 51 ",
