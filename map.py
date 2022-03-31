@@ -19,6 +19,7 @@ class Map():
         self.longitudeMin = 20.0
         self.longitudeMax = 25.0
         self.selectedI = -1
+        self.selectedMommyI = -1
         self.baseSurface = pygame.image.load("images/map/base-map.png")
         self.get_points("data-sources/points-and-stations-connected.json")
         self.startPointId = 53
@@ -56,15 +57,16 @@ class Map():
         #self.move_cursor()
         if self.game.START_KEY:
             print("enter pressed")
-            
             self.game.START_KEY=False
-            #self.running = False
             self.game.activePointI = self.selectedI
-            # PALAIŽ MAŠĪNĪTI UN TAD QUIZU
+            self.selectedMommyI = self.selectedI
+            print("MOMMY CHANGED")
+            #self.running = False
+            #PALAIŽ MAŠĪNĪTI UN TAD QUIZU
             #self.running = True
             self.visiteds[self.selectedI] = 1
             self.makeAvailable(self.selectedI)
-            self.game.START_KEU=False
+            self.game.START_KEY=False
         if self.game.RIGHT_KEY:
             print("right pressed")
             self.moveSelected(1)
@@ -75,11 +77,18 @@ class Map():
             self.game.LEFT_KEY = False
 
     def moveSelected(self, direction):
-        i = self.selectedI
-        i = i+direction
-        while self.availables[i]==0:
-            i = (i+direction+len(self.availables))%len(self.availables)
-        self.selectedI = i
+        newI = 0
+        neiI = 0
+        found = 0
+        for neighbour in self.roads[self.selectedMommyI]:
+            if((int)(neighbour)==(int)(self.ids[self.selectedI])):
+                print("found")
+                found = 1
+                break
+            neiI=neiI+1
+        neiI = (neiI + +direction+len(self.roads[self.selectedMommyI]) ) % len(self.roads[self.selectedMommyI])
+        newI = self.idToI.get((int)(self.roads[self.selectedMommyI][neiI]))
+        self.selectedI = newI
         print("SELECTED : " + str(self.selectedI))
 
     def makeAvailable(self, momI):
