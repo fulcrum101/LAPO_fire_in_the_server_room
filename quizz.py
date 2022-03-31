@@ -110,6 +110,7 @@ class Quizz(Menu):
             if self.q[1][self.state]==self.correct_ans:
                 print(f'Pareizi! + {self.max_points} punkti.')
                 self.run_display = False
+
             else:
                 print(f'Nav areizi! Pameģeniet vēlreiz.')
                 print(f'Tagad Jūs maksimāli varat iegūt {self.max_points} punktus.')

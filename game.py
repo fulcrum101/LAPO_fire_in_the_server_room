@@ -52,6 +52,8 @@ class Game:
         self.MAX_POINTS_Q = 250 # Max points given for one question
         
         self.activePointI =-1
+        self.activeRaceDone = 0
+        self.activeQuizzDone = 0
         #note: lai tiktu pie ID self.map.ids[self.activePointI] 
 
 

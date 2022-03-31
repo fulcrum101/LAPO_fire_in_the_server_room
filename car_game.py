@@ -64,6 +64,8 @@ class CarGame():
                 self.car_x = 615
 
             self.blit_screen()
+        self.game.activeRaceDone = 1
+        self.game.map.display_map()
         self.game.curr_menu = self.game.main_menu
 
     def blit_screen(self):

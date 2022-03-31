@@ -1,6 +1,7 @@
 from operator import ne
 import pygame
 import json 
+from quizz import Quizz
 
 class Map():
     def __init__(self, game):
@@ -36,12 +37,13 @@ class Map():
         self.draw_points(4, self.game.SKYBLUE, self.game.BLUE, self.game.MAGENTA, self.game.RED, self.game.YELLOW)
         self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
-        self.check_input()
     
     def display_map(self):
         """
         Displays map.
         """
+        if(self.game.activeQuizzDone==1):self.quizEnded()
+        self.game.activeQuizzDone=0
         #self.draw_points(4, self.game.MAGENTA, self.game.MAGENTA)
         self.running = True
         while self.running:
@@ -51,6 +53,7 @@ class Map():
                 self.game.curr_menu = self.game.credits
 
             self.blit_screen()
+            self.check_input()
     
     def check_input(self):
         """
@@ -65,11 +68,12 @@ class Map():
             print("MOMMY CHANGED")
             if self.visiteds[self.selectedI]==0:
                 self.running = False
+                self.game.activeQuizzDone=0
+                self.game.quizz.ControlPointQuizz(self.ids[self.selectedI])
+                self.quizEnded()
                 #PALAIŽ MAŠĪNĪTI UN TAD QUIZU
                 #self.running = True
-                self.unvisitedLeft = self.unvisitedLeft-1
-                self.visiteds[self.selectedI] = 1
-                self.makeAvailable(self.selectedI)
+                
             self.game.START_KEY=False
         if self.game.RIGHT_KEY:
             print("right pressed")
@@ -79,6 +83,12 @@ class Map():
             print("left pressed")
             self.moveSelected(-1)
             self.game.LEFT_KEY = False
+
+    def quizEnded(self):
+        self.unvisitedLeft = self.unvisitedLeft-1
+        self.visiteds[self.selectedMommyI] = 1
+        self.makeAvailable(self.selectedMommyI)
+        self.game.activeRaceDone=0
 
     def moveSelected(self, direction):
         newI = 0
