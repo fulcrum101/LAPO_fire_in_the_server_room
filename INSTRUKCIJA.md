@@ -77,4 +77,5 @@ Tiek izpildītas 11/25 obligātām prasībam.
 
 
 - Īpaši smuka sanāca online-leaderboard lapa.
+- Leaderboard'am izmantota datu bāze tiks deaktivitēta pec mēnēša.
 - No sākuma bija doma uzrakstīt programmu, kas ģenerētu jauno audio pa daļiņam, tomēr, kad tas tika uzrakstīta, mēs sapratam, ka to nevar normāli klausīties, lai ausis nesapētu.
