@@ -56,6 +56,8 @@ class Map():
         #self.move_cursor()
         if self.game.START_KEY:
             print("enter pressed")
+            
+            self.game.START_KEY=False
             #self.running = False
             self.game.activePointI = self.selectedI
             # PALAIŽ MAŠĪNĪTI UN TAD QUIZU
