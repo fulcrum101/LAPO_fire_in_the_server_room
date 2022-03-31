@@ -50,6 +50,9 @@ class Game:
         self.end_time=None
         self.NAME=None
         self.MAX_POINTS_Q = 250 # Max points given for one question
+        
+        self.activePointI =-1
+        #note: lai tiktu pie ID self.map.ids[self.activePointI] 
 
 
     def game_loop(self):

@@ -8,6 +8,7 @@ class Map():
 
         :param game: (Game [game.py]) Main Game object.
         """
+        self.idToI ={}
         self.game = game
         self.width, self.height = self.game.DISPLAY_W, self.game.DISPLAY_H
         self.pixelWidth, self.pixelHeight = 5, 5 # where do i get this from???
@@ -17,6 +18,7 @@ class Map():
         self.latitudeMax = 57.9
         self.longitudeMin = 20.0
         self.longitudeMax = 25.0
+        self.selectedI = -1
         self.baseSurface = pygame.image.load("images/map/base-map.png")
         self.get_points("data-sources/points-and-stations-connected.json")
         self.startPointId = 53
@@ -28,9 +30,10 @@ class Map():
         Resets screen.
         """
         self.game.display.blit(self.baseSurface, (0,0))
-        self.draw_points(4, self.game.SKYBLUE, self.game.BLUE, self.game.MAGENTA, self.game.RED)
+        self.draw_points(4, self.game.SKYBLUE, self.game.BLUE, self.game.MAGENTA, self.game.RED, self.game.YELLOW)
         self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
+        self.check_input()
     
     def display_map(self):
         """
@@ -50,9 +53,37 @@ class Map():
         """
         Listens for keyboard events and changes Menu.state state.
         """
-        self.move_cursor()
-        if self.game.BACK_KEY:
-            self.running = False
+        #self.move_cursor()
+        if self.game.START_KEY:
+            print("enter pressed")
+            #self.running = False
+            self.game.activePointI = self.selectedI
+            # PALAIŽ MAŠĪNĪTI UN TAD QUIZU
+            #self.running = True
+            self.visiteds[self.selectedI] = 1
+            self.makeAvailable(self.selectedI)
+            self.game.START_KEU=False
+        if self.game.RIGHT_KEY:
+            print("right pressed")
+            self.moveSelected(1)
+            self.game.RIGHT_KEY = False
+        if self.game.LEFT_KEY:
+            print("left pressed")
+            self.moveSelected(-1)
+            self.game.LEFT_KEY = False
+
+    def moveSelected(self, direction):
+        i = self.selectedI
+        i = i+direction
+        while self.availables[i]==0:
+            i = (i+direction+len(self.availables))%len(self.availables)
+        self.selectedI = i
+        print("SELECTED : " + str(self.selectedI))
+
+    def makeAvailable(self, momI):
+        for child in self.roads[momI]:
+            childI = (int)(self.idToI.get((int)(child)))
+            self.availables[childI]=1
 
     def getPointData(self, filePath):
         """
@@ -79,26 +110,31 @@ class Map():
         roads = []
         availables = []
         visiteds = []
+        i = 0
         for point in data['features']:
             x = (int)((point['geometry']['coordinates'][0]-self.longitudeMin)/widthInCoordinates*self.width/self.pixelWidth)
             coordinatesX.append((int)(x))
             y = nOfPixelsY-(int)((point['geometry']['coordinates'][1]-self.latitudeMin)/heightInCoordinates*self.height/self.pixelHeight)
             coordinatesY.append((int)(y))
-            roadlist = point['properties']['roads']
+            roadstring = str(point['properties']['roads'])
+            roadlist = list(roadstring.split(" "))
+            roadlist.pop()
             roads.append(roadlist)
             typee = point['properties']["type"]
             types.append(typee)
             id = (int)(point['properties']['id'])
             ids.append(id)
+            self.idToI[id]=i
             if(id == 53): 
-                print("startPoint exists yay")
+                #print("startPoint exists yay")
                 availables.append(1)
+                self.selectedI = i
             else :
                 availables.append(0)
             visiteds.append(0)
             name = point['properties']['name']
             names.append(name)
-            #can read name of point and id as well
+            i=i+1
         return coordinatesX, coordinatesY, roads, types, availables, visiteds, names, ids
 
     def get_points(self, pathToDataSource): # path= "data-sources/points.json" or "data-sources/cities.json"
@@ -125,7 +161,7 @@ class Map():
         pygame.draw.rect(self.game.display, colour, (x*self.pixelWidth, y*self.pixelHeight, self.pixelWidth*nInGamePixels, self.pixelHeight*nInGamePixels))
         #self.blit_screen() 
 
-    def draw_points(self, nInGamePixels, colourIfNotVisitedStation, colourIfVisitedStation, colourIfNotVisitedPoint, colourIfVisitedPoint):
+    def draw_points(self, nInGamePixels, colourIfNotVisitedStation, colourIfVisitedStation, colourIfNotVisitedPoint, colourIfVisitedPoint, colourSelected):
         """
         Marks points and cities on the map.
 
@@ -138,7 +174,10 @@ class Map():
             i+=1
             if self.availables[i]==0:
                 continue
-            print(self.ids[i])
+            if self.selectedI == i:
+                self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourSelected)#draw in one colour
+                continue
+            #print(self.ids[i])
             if self.types[i]=="chargingStation":
                 if state == 0: #not visited
                     self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourIfNotVisitedStation)#draw in one colour
