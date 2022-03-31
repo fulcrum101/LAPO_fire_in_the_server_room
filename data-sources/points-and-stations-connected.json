@@ -1,0 +1,1253 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KANDAVA",
+        "id": 1,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.780682,
+          57.03291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KULDĪGA",
+        "id": 2,
+        "roads": "37 38 41 45 55 59 64 68",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.965864,
+          56.966726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VENTSPILS P10",
+        "id": 3,
+        "roads": "17 58 62 64 67 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.561942,
+          57.394156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ĶEKAVA",
+        "id": 4,
+        "roads": "5 7 51 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.2457,
+          56.821312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IECAVA",
+        "id": 5,
+        "roads": "4 6 19 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.191557,
+          56.592941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BAUSKA",
+        "id": 6,
+        "roads": "5 57 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.185642,
+          56.405481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "JAUNOLAINE",
+        "id": 7,
+        "roads": "4 19 49 51 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.987748,
+          56.799687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TĪREĻI",
+        "id": 8,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.586251,
+          56.842235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DOBELE",
+        "id": 9,
+        "roads": "16 19 66 78 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.286206,
+          56.625469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RUCAVA",
+        "id": 10,
+        "roads": "11 73 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.161498,
+          56.160211
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NĪCA",
+        "id": 11,
+        "roads": "10 28 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.065425,
+          56.346112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LIEĢI",
+        "id": 12,
+        "roads": "28 45 74 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.335453,
+          56.579593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KALVENE",
+        "id": 13,
+        "roads": "14 42 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.738226,
+          56.604986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SKRUNDA",
+        "id": 14,
+        "roads": "13 37 45 55 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.014188,
+          56.674711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SALDUS",
+        "id": 15,
+        "roads": "",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.493813,
+          56.667724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BIKSTI",
+        "id": 16,
+        "roads": "9 31 37 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.970049,
+          56.664168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UGĀLE",
+        "id": 17,
+        "roads": "3 35 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.01952,
+          57.27434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KURŠU KROGS",
+        "id": 18,
+        "roads": "35 39 59 60 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.57696,
+          57.193627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hotel Jelgava",
+        "id": 19,
+        "roads": "5 7 9 47 77 78 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.72813,
+          56.653441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Engure",
+        "id": 20,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.22018,
+          57.171397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kolka",
+        "id": 21,
+        "roads": "22 23 61 67 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.585042,
+          57.742904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Roja",
+        "id": 22,
+        "roads": "21 70 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.821177,
+          57.497313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dundaga",
+        "id": 23,
+        "roads": "21 60 67 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.350117,
+          57.504945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vāne",
+        "id": 24,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.560743,
+          56.923052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aizpute (0075)",
+        "id": 25,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.607446,
+          56.720062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Auce",
+        "id": 26,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.894711,
+          56.465839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pāvilosta",
+        "id": 27,
+        "roads": "28 71 72 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.190617,
+          56.887386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Liepāja T22",
+        "id": 28,
+        "roads": "11 12 27 42 54 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.014746,
+          56.51961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Priekule",
+        "id": 29,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.584808,
+          56.442989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jūrkalne",
+        "id": 30,
+        "roads": [],
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.391727,
+          57.012447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pienava",
+        "id": 31,
+        "roads": "16 47 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.246121,
+          56.741714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tukums T4A",
+        "id": 32,
+        "roads": "39 40 63 65 69 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.153392,
+          56.96717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jūrmala T66",
+        "id": 33,
+        "roads": "49 69 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.604469,
+          56.963781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rīga VP2C",
+        "id": 34,
+        "roads": "53 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.112963,
+          57.035699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tūrisma un atpūtas centrs ''Spāre'' (Dumbri)",
+        "id": 35,
+        "roads": "17 18 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.269129,
+          57.216449
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L. Petravičiaus Aikštė",
+        "id": 36,
+        "roads": "44 52 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.882125,
+          56.321951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saldus Market",
+        "id": 37,
+        "roads": "2 14 16 75 76 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.493738,
+          56.66778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Charging Station has to be",
+        "id": 38,
+        "roads": "2 39 63 75 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.560743,
+          56.923052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kandavas Autoosta",
+        "id": 39,
+        "roads": "18 32 38 59 63 75",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.780608,
+          57.03292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Charging Station has to be",
+        "id": 40,
+        "roads": "32 70 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.220349,
+          57.171351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Charging Station has to be",
+        "id": 41,
+        "roads": "2 62 71 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.391727,
+          57.012447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Priekule",
+        "id": 42,
+        "roads": "13 28 52 73 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.584808,
+          56.442989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ELEJA",
+        "id": 43,
+        "roads": "57 78 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.681988,
+          56.416907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Auce",
+        "id": 44,
+        "roads": "36 66 76 78 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.894711,
+          56.465839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Charging Station has to be",
+        "id": 45,
+        "roads": "2 12 14 74 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.607446,
+          56.720062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tērvetes dabas parks visitors",
+        "id": 46,
+        "roads": "78 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.373316,
+          56.487644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Astarte Tīreļi",
+        "id": 47,
+        "roads": "19 31 51 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.586504,
+          56.842259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "333 Sporta Komplekss",
+        "id": 48,
+        "roads": "51 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.413373,
+          56.95016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Elektrum — Jomas iela",
+        "id": 49,
+        "roads": "7 33 51 56 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.789115,
+          56.972071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Neste Kauguri",
+        "id": 50,
+        "roads": "",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.604411,
+          56.963831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Main station parking",
+        "id": 51,
+        "roads": "4 7 47 48 49 53 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.121553,
+          56.947863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Maxima",
+        "id": 52,
+        "roads": "36 42 76 ",
+        "type": "chargingStation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.340296,
+          56.316676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RV1G",
+        "id": 53,
+        "type": "point",
+        "roads": "34 51 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.112299978733063,
+          56.952579518305825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Liepājas pludmale",
+        "id": 54,
+        "type": "point",
+        "roads": "28 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.000189185142517,
+          56.508220239097085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "point",
+        "name": "Skrunda-1",
+        "id": 55,
+        "roads": "2 14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.994881062002786,
+          56.72594802274915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Majoru pludmale",
+        "type": "point",
+        "id": 56,
+        "roads": "49 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.812018632888794,
+          56.976622886965146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rundāles pils",
+        "type": "point",
+        "id": 57,
+        "roads": "6 43 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.025506377220154,
+          56.41553497139499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dienvidu mols",
+        "type": "point",
+        "id": 58,
+        "roads": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.532894670963287,
+          57.397624055000456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Valdātu rumba",
+        "type": "point",
+        "id": 59,
+        "roads": "2 18 39"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.293220460414886,
+          57.066231449232454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Valpenes piramīda",
+        "type": "point",
+        "id": 60,
+        "roads": "18 23 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.383816,
+          57.425927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kolkasrags",
+        "type": "point",
+        "id": 61,
+        "roads": 21
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.593984603881836,
+          57.75501449262583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Užavas bāka",
+        "type": "point",
+        "id": 62,
+        "roads": "3 41 64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.462135314941406,
+          57.22504510980761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tilts uz nekurieni",
+        "type": "point",
+        "roads": "32 38 39 75 ",
+        "id": 63
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.978249,
+          56.911251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Piltenes pilsdrupas",
+        "type": "point",
+        "id": 64,
+        "roads": "2 3 62 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.670644879341125,
+          57.221371394756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vecmoku muižas drupas",
+        "type": "point",
+        "id": 65,
+        "roads": "32 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.081432,
+          56.999472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pokaiņu mežs",
+        "type": "point",
+        "id": 66,
+        "roads": "9 44 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.07108781342926,
+          56.57665352138236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Irbenes radioteleskops",
+        "type": "point",
+        "id": 67,
+        "roads": "3 21 23 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.86521768569946,
+          57.56225885709743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ventas rumba",
+        "type": "point",
+        "id": 68,
+        "roads": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.97763442993164,
+          56.970129212227974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ķemeru nacionālais dabas parks",
+        "type": "point",
+        "id": 69,
+        "roads": "32 33 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.486666679382324,
+          56.93376009798997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Engures ezers",
+        "type": "point",
+        "id": 70,
+        "roads": "22 40 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.060388565063477,
+          57.28803081780767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "57. paralēles akmens",
+        "type": "point",
+        "id": 71,
+        "roads": "27 41 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.35890245437622,
+          56.98856934278864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pāvilostas Ziemeļu mols",
+        "type": "point",
+        "id": 72,
+        "roads": "27 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.168272495269775,
+          56.88797332748533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Priekules lidlauks",
+        "type": "point",
+        "id": 73,
+        "roads": "10 42 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.578446626663208,
+          56.431221927281044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aizputes ūdenstornis",
+        "type": "point",
+        "id": 74,
+        "roads": "12 45 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.60541757941246,
+          56.71704484179619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Peldu tornis",
+        "type": "point",
+        "id": 75,
+        "roads": "37 38 39 63"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.691423892974854,
+          56.74062728265576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kursīšu ezers",
+        "type": "point",
+        "id": 76,
+        "roads": "37 44 52 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.40063173669361,
+          56.51152100076814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Laika rats 100",
+        "type": "point",
+        "id": 77,
+        "roads": "19 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.71089911798732,
+          56.65335813616416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tērvetes Dabas parks",
+        "type": "point",
+        "id": 78,
+        "roads": "9 19 43 44 46 "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.372560143470764,
+          56.48770805310676
+        ]
+      }
+    }
+  ]
+}

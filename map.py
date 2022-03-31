@@ -18,14 +18,17 @@ class Map():
         self.longitudeMin = 20.0
         self.longitudeMax = 25.0
         self.baseSurface = pygame.image.load("images/map/base-map.png")
-        self.get_points("data-sources/cities.json")
+        self.get_points("data-sources/points-and-stations-connected.json")
+        self.startPointId = 53
+        self.endPointId = 54
+        
 
     def blit_screen(self):
         """
         Resets screen.
         """
         self.game.display.blit(self.baseSurface, (0,0))
-        self.draw_points(4, self.game.MAGENTA, self.game.MAGENTA)
+        self.draw_points(4, self.game.SKYBLUE, self.game.BLUE, self.game.MAGENTA, self.game.RED)
         self.game.window.blit(self.game.display, (0,0))
         pygame.display.update()  # flush
     
@@ -42,7 +45,14 @@ class Map():
                 self.game.curr_menu = self.game.credits
 
             self.blit_screen()
-        
+    
+    def check_input(self):
+        """
+        Listens for keyboard events and changes Menu.state state.
+        """
+        self.move_cursor()
+        if self.game.BACK_KEY:
+            self.running = False
 
     def getPointData(self, filePath):
         """
@@ -63,7 +73,12 @@ class Map():
         heightInCoordinates = self.latitudeMax-self.latitudeMin
         coordinatesX=[] #coordinate list initialisation
         coordinatesY=[]
+        names = []
+        ids = []
+        types = []
         roads = []
+        availables = []
+        visiteds = []
         for point in data['features']:
             x = (int)((point['geometry']['coordinates'][0]-self.longitudeMin)/widthInCoordinates*self.width/self.pixelWidth)
             coordinatesX.append((int)(x))
@@ -71,8 +86,20 @@ class Map():
             coordinatesY.append((int)(y))
             roadlist = point['properties']['roads']
             roads.append(roadlist)
+            typee = point['properties']["type"]
+            types.append(typee)
+            id = (int)(point['properties']['id'])
+            ids.append(id)
+            if(id == 53): 
+                print("startPoint exists yay")
+                availables.append(1)
+            else :
+                availables.append(0)
+            visiteds.append(0)
+            name = point['properties']['name']
+            names.append(name)
             #can read name of point and id as well
-        return coordinatesX, coordinatesY, roads
+        return coordinatesX, coordinatesY, roads, types, availables, visiteds, names, ids
 
     def get_points(self, pathToDataSource): # path= "data-sources/points.json" or "data-sources/cities.json"
         """
@@ -81,7 +108,7 @@ class Map():
 
         :param pathToDataSource: (str) Path to file (.json) with all points. 
         """
-        self.pointCoordinatesX, self.pointCoordinatesY, self.roads = self.getPointData(pathToDataSource)
+        self.pointCoordinatesX, self.pointCoordinatesY, self.roads, self.types, self.availables, self.visiteds, self.names, self.ids = self.getPointData(pathToDataSource)
         #self.cityCoordinatesX, ... # do the same thing when cities.json file added
         self.pointStates=[0]*len(self.pointCoordinatesX)
 
@@ -98,7 +125,7 @@ class Map():
         pygame.draw.rect(self.game.display, colour, (x*self.pixelWidth, y*self.pixelHeight, self.pixelWidth*nInGamePixels, self.pixelHeight*nInGamePixels))
         #self.blit_screen() 
 
-    def draw_points(self, nInGamePixels, colourIfNotVisited, colourIfVisited):
+    def draw_points(self, nInGamePixels, colourIfNotVisitedStation, colourIfVisitedStation, colourIfNotVisitedPoint, colourIfVisitedPoint):
         """
         Marks points and cities on the map.
 
@@ -106,13 +133,24 @@ class Map():
         :param colourIfNotVisited: (turple (z, z, z)) Color of the point if it was not previously visited.
         :param colourIfVisited: (turple (z, z, z)) Color of the point if it was not previously visited.
         """
-        id = 0
-        for state in self.pointStates:
-            if state == 0: #not visited
-                self.draw_a_square(nInGamePixels, self.pointCoordinatesX[id], self.pointCoordinatesY[id], colourIfNotVisited)#draw in one colour
+        i = -1
+        for state in self.visiteds:
+            i+=1
+            if self.availables[i]==0:
+                continue
+            print(self.ids[i])
+            if self.types[i]=="chargingStation":
+                if state == 0: #not visited
+                    self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourIfNotVisitedStation)#draw in one colour
+                else:
+                    self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourIfVisitedStation)#draw in a different colour
             else:
-                self.draw_a_square(nInGamePixels, self.pointCoordinatesX[id], self.pointCoordinatesY[id], colourIfVisited)#draw in a different colour
-            id+=1
+                if state == 0: #not visited
+                    self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourIfNotVisitedPoint)#draw in one colour
+                else:
+                    self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourIfVisitedPoint)#draw in a different colour
+            
+            
 
     def draw_a_road(self, x1, y1, x2, y2, linewidth, colour):
         """
