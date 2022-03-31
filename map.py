@@ -64,14 +64,17 @@ class Map():
             self.selectedMommyI = self.selectedI
             self.game.START_KEY=False
             if self.visiteds[self.selectedI]==0:
-                self.running = False
-                self.game.activeQuizzDone=0
-                self.game.quizz.ControlPointQuizz(self.ids[self.selectedI])
+                #self.running = False
+                #self.game.activeQuizzDone=0
+                #self.game.quizz.ControlPointQuizz(self.ids[self.selectedI])
+                #self.game.activeRaceDone=0
+                #self.game.activeQuizDone=0
+                print("Point " + str(self.ids[self.selectedMommyI]) + " unlocked")
+                
                 self.unvisitedLeft = self.unvisitedLeft-1
                 self.visiteds[self.selectedMommyI] = 1
                 self.makeAvailable(self.selectedMommyI)
-                self.game.activeRaceDone=0
-                self.running = True
+                #self.running = True
                 
             self.game.START_KEY=False
         if self.game.RIGHT_KEY:
