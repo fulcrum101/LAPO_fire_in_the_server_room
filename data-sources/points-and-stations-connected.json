@@ -4,22 +4,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KANDAVA",
-        "id": 1,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.780682,
-          57.03291
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "KULDĪGA",
         "id": 2,
         "roads": "37 38 41 45 55 59 64 68",
@@ -110,22 +94,6 @@
         "coordinates": [
           23.987748,
           56.799687
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TĪREĻI",
-        "id": 8,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.586251,
-          56.842235
         ]
       }
     },
@@ -228,22 +196,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SALDUS",
-        "id": 15,
-        "roads": "",
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.493813,
-          56.667724
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "BIKSTI",
         "id": 16,
         "roads": "9 31 37 ",
@@ -308,22 +260,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Engure",
-        "id": 20,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.22018,
-          57.171397
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Kolka",
         "id": 21,
         "roads": "22 23 61 67 ",
@@ -372,22 +308,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Vāne",
-        "id": 24,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.560743,
-          56.923052
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "Aizpute (0075)",
         "id": 25,
         "roads": [],
@@ -398,22 +318,6 @@
         "coordinates": [
           21.607446,
           56.720062
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Auce",
-        "id": 26,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.894711,
-          56.465839
         ]
       }
     },
@@ -446,38 +350,6 @@
         "coordinates": [
           21.014746,
           56.51961
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Priekule",
-        "id": 29,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.584808,
-          56.442989
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Jūrkalne",
-        "id": 30,
-        "roads": [],
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.391727,
-          57.012447
         ]
       }
     },
@@ -782,22 +654,6 @@
         "coordinates": [
           23.789115,
           56.972071
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Neste Kauguri",
-        "id": 50,
-        "roads": "",
-        "type": "chargingStation"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.604411,
-          56.963831
         ]
       }
     },
