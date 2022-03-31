@@ -42,8 +42,6 @@ class Map():
         """
         Displays map.
         """
-        if(self.game.activeQuizzDone==1):self.quizEnded()
-        self.game.activeQuizzDone=0
         #self.draw_points(4, self.game.MAGENTA, self.game.MAGENTA)
         self.running = True
         while self.running:
@@ -69,9 +67,11 @@ class Map():
                 self.running = False
                 self.game.activeQuizzDone=0
                 self.game.quizz.ControlPointQuizz(self.ids[self.selectedI])
-                self.quizEnded()
-                #PALAIŽ MAŠĪNĪTI UN TAD QUIZU
-                #self.running = True
+                self.unvisitedLeft = self.unvisitedLeft-1
+                self.visiteds[self.selectedMommyI] = 1
+                self.makeAvailable(self.selectedMommyI)
+                self.game.activeRaceDone=0
+                self.running = True
                 
             self.game.START_KEY=False
         if self.game.RIGHT_KEY:
@@ -80,12 +80,6 @@ class Map():
         if self.game.LEFT_KEY:
             self.moveSelected(-1)
             self.game.LEFT_KEY = False
-
-    def quizEnded(self):
-        self.unvisitedLeft = self.unvisitedLeft-1
-        self.visiteds[self.selectedMommyI] = 1
-        self.makeAvailable(self.selectedMommyI)
-        self.game.activeRaceDone=0
 
     def moveSelected(self, direction):
         newI = 0

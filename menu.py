@@ -274,14 +274,18 @@ class CarMenu(Menu):
             self.game.curr_menu = self.game.main_menu
             self.run_display = False
         elif self.game.START_KEY:
-            self.game.car = pygame.transform.scale(self.cars[self.cur_i], (100, 200))
-            self.game.playing = True
             if self.game.activeRaceDone == 1:
                 self.game.activeQuizDone=0
                 self.game.map.display_map()
             else:
+                
+                self.game.car = pygame.transform.scale(self.cars[self.cur_i], (100, 200))
+                self.game.playing = True
                 print("Go!")
                 self.game.car_game.run_car(1)
+            
+            
+                
             
             #self.game.quizz.ControlPointQuizz(self.game.map.ids[self.game.activePointI])
             #self.game.charge_quizz.StationQuizz()
