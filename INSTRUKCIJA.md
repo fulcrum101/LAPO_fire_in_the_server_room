@@ -58,3 +58,23 @@
 - Visa statistika paradas pēc spēles aizveršanas termināla.
 - Jāievada savu nickname/vārdu.
 - Labākos rezultātus var skatīties real-time [šeit](https://share.streamlit.io/fulcrum101/lapo_fire_in_the_server_room/main/main_streamlit.py). 
+
+# Obligātu prasību izpelde
+
+Tiek izpildītas 11/25 obligātām prasībam.
+
+# Papildus prasību izpelde
+
+- Katram kontrolpunktam ir sagatavoti vairāki uzdevumi,katrā izspēles reizē programma nejauši izvēlas vienu no tiem, t.i., izspēlējot spēli atkārtoti spēlētājam būs jārisina citi uzdevumi.
+- Spēles noslēgumā programma izvada reālo laiku minūtēs un sekundēs, cik ilgi spēlētājs pavadījis spēlē.
+- Spēles noslēgumā spēlētājam tiek pajautāts ievadīt vārdu.
+- Spēlētāja vārds un spēles rezultāti (laiks, bonusa punkti u.c.) tiek saglabāti teksta failā vai datu bāzē
+- Programma nodrošina lietotājam iespēju apskatīties 10 labākos spēles rezultātus –spēlētāja vārds, spēles laiks (minūtēs un sekundes)un bonusa punkti–sakārtotus pēc spēles laika augošā secībā
+- Spēlētājam tiek nodrošināta iespēja jebkurā spēles brīdī lasīt spēles noteikumus.
+
+---
+**Kommentāri no autoriem:**
+
+
+- Īpaši smuka sanāca online-leaderboard lapa.
+- No sākuma bija doma uzrakstīt programmu, kas ģenerētu jauno audio pa daļiņam, tomēr, kad tas tika uzrakstīta, mēs sapratam, ka to nevar normāli klausīties, lai ausis nesapētu.
