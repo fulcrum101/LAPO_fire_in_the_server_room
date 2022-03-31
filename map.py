@@ -61,11 +61,10 @@ class Map():
         """
         #self.move_cursor()
         if self.game.START_KEY:
-            print("enter pressed")
             self.game.START_KEY=False
             self.game.activePointI = self.selectedI
             self.selectedMommyI = self.selectedI
-            print("MOMMY CHANGED")
+            self.game.START_KEY=False
             if self.visiteds[self.selectedI]==0:
                 self.running = False
                 self.game.activeQuizzDone=0
@@ -76,11 +75,9 @@ class Map():
                 
             self.game.START_KEY=False
         if self.game.RIGHT_KEY:
-            print("right pressed")
             self.moveSelected(1)
             self.game.RIGHT_KEY = False
         if self.game.LEFT_KEY:
-            print("left pressed")
             self.moveSelected(-1)
             self.game.LEFT_KEY = False
 
@@ -99,7 +96,6 @@ class Map():
                 neiI = neiI+1
                 continue
             if((int)(neighbour)==(int)(self.ids[self.selectedI])):
-                print("found")
                 found = 1
                 break
             neiI=neiI+1
@@ -160,7 +156,6 @@ class Map():
             ids.append(id)
             self.idToI[id]=i
             if(id == 53): 
-                #print("startPoint exists yay")
                 availables.append(1)
                 self.selectedI = i
             else :
@@ -211,7 +206,7 @@ class Map():
             if self.selectedI == i:
                 self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourSelected)#draw in one colour
                 continue
-            #print(self.ids[i])
+        
             if self.types[i]=="chargingStation":
                 if state == 0: #not visited
                     self.draw_a_square(nInGamePixels, self.pointCoordinatesX[i], self.pointCoordinatesY[i], colourIfNotVisitedStation)#draw in one colour
